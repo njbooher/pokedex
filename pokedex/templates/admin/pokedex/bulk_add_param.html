@@ -1,0 +1,21 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+  <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo;  <a href="{% url 'admin:app_list' app_label='pokedex' %}">pokedex</a>
+&rsaquo;  <a href="/admin/pokedex/route/">Routes</a>
+&rsaquo;  {% trans 'Bulk add param to route' %} {{ original|truncatewords:"18" }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+<form enctype="multipart/form-data" action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

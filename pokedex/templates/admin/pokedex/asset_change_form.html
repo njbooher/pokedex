@@ -1,0 +1,10 @@
+{% extends 'admin/change_form.html' %}
+
+{% block object-tools-items %}
+    {% if object_id %}
+    <li>
+        <a href="{% url 'import_asset_deployments' assetid=object_id %}" class="btn btn-high btn-success">Import Deployments</a>
+    </li>
+    {{ block.super }}
+    {% endif %}
+{% endblock %}
