@@ -1,4 +1,4 @@
-Django~=5.2.3
+Django~=4.2.25
 whitenoise~=6.9.0
 requests~=2.32.4
 gunicorn~=23.0.0
